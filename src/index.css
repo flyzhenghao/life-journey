@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Noto Sans SC', sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  min-height: 100vh;
+  color: #e8d5b7;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(245, 166, 35, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 166, 35, 0.5);
+}
+
+/* Input autofill styling */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #e8d5b7;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.05) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Date input styling */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.8) sepia(1) saturate(5) hue-rotate(10deg);
+  cursor: pointer;
+}
+
+/* Animation classes */
+.animate-fade-slide-in {
+  animation: fadeSlideIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Star animation */
+.star {
+  animation: twinkle var(--duration, 3s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Pulse animation for timeline nodes */
+.pulse-ring {
+  animation: pulseRing 2s ease-out infinite;
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #e8d5b7 0%, #f5e6d3 50%, #d4a574 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(245, 166, 35, 0.1);
+}
+
+/* Timeline line gradient */
+.timeline-line {
+  background: linear-gradient(
+    to bottom,
+    rgba(245, 166, 35, 0.5),
+    rgba(245, 166, 35, 0.3),
+    transparent
+  );
+}
+
+/* Font classes */
+.font-serif {
+  font-family: 'Noto Serif SC', Georgia, serif;
+}
+
+.font-crimson {
+  font-family: 'Crimson Text', Georgia, serif;
+}
+
+/* Background gradients */
+.bg-gradient-main {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+.bg-gradient-timeline {
+  background: linear-gradient(180deg, #0a0a1a 0%, #1a1a2e 50%, #0f1a2a 100%);
+}
+
+/* Title gradient text */
+.title-gradient {
+  background: linear-gradient(135deg, #e8d5b7 0%, #f5e6d3 50%, #d4a574 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 60px rgba(232, 213, 183, 0.3);
+}
+
+/* Button styles */
+.btn-primary {
+  @apply px-8 py-3 bg-gradient-to-r from-amber-600 to-amber-500 rounded-full text-white font-medium tracking-wider transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/25;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 border border-amber-400/30 rounded-full text-amber-200/70 transition-all duration-300 hover:bg-white/5 hover:border-amber-400/50;
+}
+
+/* Input field styles */
+.input-field {
+  @apply w-full px-4 py-3 bg-white/5 border border-amber-400/20 rounded-xl text-amber-100 placeholder-amber-200/30 focus:outline-none focus:border-amber-400/50 transition-all;
+}
+
+/* Twinkle animation */
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { 
+    opacity: 0.2; 
+    transform: scale(1); 
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.2); 
+  }
+}
